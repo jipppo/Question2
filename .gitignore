@@ -1,52 +1,107 @@
-# Prerequisites
-*.d
+#include<stdio.h>
+#include<stdlib.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+int main()
+{
+	char start, destination, trans, hotel, meal_type;
+	int stay, meal_amt;
+	
+	printf("**************************\n\n");
+	printf("     Trip Calculator      \n\n");
+	printf("**************************\n\n");
+	getchar();
+	system("cls");
+	
+	printf("Enter source city:\n\n");
+	printf("B for Baltimore\n\n");
+	printf("C for Chattanooga\n\n");
+	printf("N for Nashville\n\n");
+	printf("P for Pasadena\n\n");
+	scanf("%c", &start);
+	getchar();
+	system("cls");
+	
+	printf("Enter destination city:\n\n");
+	printf("D for Denver\n\n");
+	printf("M for Madison\n\n");
+	printf("C for Clarksville\n\n");
+	printf("K for Knoxville\n\n");
+	scanf("%c", &destination);
+	getchar();
+	system("cls");
+	
+	printf("Enter your mode of transportation:\n\n");
+	printf("A for Air\n\n");
+	printf("R for Train\n\n");
+	printf("B for Bus\n\n");
+	scanf("%c", &trans);
+	getchar();
+	system("cls");
+	
+	printf("Enter your hotel:\n\n");
+	printf("F for Five Star\n\n");
+	printf("T for Three Star\n\n");
+	printf("O for Ordinary\n\n");
+	scanf("%c", &hotel);
+	getchar();
+	system("cls");
+	
+	printf("How many nights will you be staying:\n\n");
+	scanf("%d", &stay);
+	system("cls");
+	
+	printf("Enter your meal type:\n\n");
+	printf("V for Vegetarian\n\n");
+	printf("N for Non-Vegetarian\n\n");
+	printf("C for Continental\n\n");
+	scanf("%c", &meal_type);
+	getchar();
+	system("cls");
+	
+	printf("How many meals do you intend on eating:\n\n");
+	scanf("%d", &meal_amt);
+	system("cls");
+	
+	int hotel_charges, food_charges, total;
+	
+	hotel_charges = stay*500;
+	food_charges = 15*meal_amt*stay;
+	total = 5000+hotel_charges+food_charges;
+	
+	switch (start)
+	{
+		case 'b':
+		case 'B':
+			switch (end)
+			{
+				case 'd':
+				case 'D':
+					switch (trans)
+					{
+						case 'a':
+						case 'A':
+							switch (hotel)
+							{
+								case 'f':
+								case 'F':
+									switch (meal_type)
+									{
+										case 'v':
+										case 'V':
+										printf("Transportation charges: 5000\n");
+										printf("Number of stays: %d\n", stay);
+										printf("Number of meals in a day: %d\n", meal_amt);
+										printf("Room charges: %d\n", hotel_charges);
+										printf("Food charges: %d\n", food_charges);
+										printf("Total charges: %d\n", total);
+										break;
+									}
+							}
+					}	
+			}
+	}
+	
+	system("pause");
+	
+	return 0;
+}
