@@ -48,6 +48,7 @@ int main()
 	
 	printf("How many nights will you be staying:\n\n");
 	scanf("%d", &stay);
+	getchar();
 	system("cls");
 	
 	printf("Enter your meal type:\n\n");
@@ -60,6 +61,7 @@ int main()
 	
 	printf("How many meals do you intend on eating:\n\n");
 	scanf("%d", &meal_amt);
+	getchar();
 	system("cls");
 	
 	int hotel_charges, food_charges, total;
@@ -72,7 +74,7 @@ int main()
 	{
 		case 'b':
 		case 'B':
-			switch (end)
+			switch (destination)
 			{
 				case 'd':
 				case 'D':
@@ -97,7 +99,7 @@ int main()
 										break;
 									}
 							}
-					}	
+					}
 			}
 	}
 	
